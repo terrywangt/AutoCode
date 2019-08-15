@@ -1,0 +1,48 @@
+{{%
+    //模板文件输出文件名称
+    output="<%-className%>Test.txt";
+%}}
+<%
+//js命名（NickName=>nickName）
+String.prototype.toJsName=function(){
+    var str=this.toString();
+    if(typeof(str)!=="string"||str.length<=0) return str;
+    return str.substring(0,1).toLowerCase()+str.substring(1);
+}
+//js命名（NickName=>nick_name）
+String.prototype.toJsName2=function(){
+    var str=this.toString();
+    if(typeof(str)!=="string"||str.length<=0) return str;
+    return str.toJsName().replace(/([A-Z])/g,"_$1").toLowerCase();   
+}
+//js命名（NickName=>nick-name）
+String.prototype.toJsName3=function(){
+    var str=this.toString();
+    if(typeof(str)!=="string"||str.length<=0) return str;
+    return str.toJsName().replace(/([A-Z])/g,"-$1").toLowerCase();     
+}
+// 转换驼峰命名（nick-name=>NickName nick_name=>NickName）
+String.prototype.toHump=function(){
+    var str=this.toString();
+    if(typeof(str)!=="string"||str.length<=0) return str;
+    str= str.replace(/[\-,\_]{1}(\w)/g, function(all, letter){
+        return letter.toUpperCase();
+    }); 
+    return str.substring(0,1).toUpperCase()+str.substring(1);  
+}
+%>
+<%-className%>
+<%-className.toJsName()%>
+<%-className.toJsName2()%>
+<%-className.toJsName3()%>
+
+<%-tableName%>
+<%-tableName.toHump()%>
+<%-tableName.toHump().toJsName()%>
+
+模板上所有数据：
+<%- JSON.stringify(locals)%>
+
+
+
+

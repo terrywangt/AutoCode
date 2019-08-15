@@ -1,0 +1,13 @@
+
+BillBudget
+billBudget
+bill_budget
+bill-budget
+
+
+tb_bill_budget_info
+TbBillBudgetInfo
+tbBillBudgetInfo
+{"columns":{"idx":{"type":"INT(12)","allowNull":false,"defaultValue":null,"primaryKey":true,"autoIncrement":true,"comment":"主键","foreignKey":{"source_table":"kuaigolf_staging","source_schema":"kuaigolf_staging","target_schema":null,"constraint_name":"PRIMARY","source_column":"idx","target_table":null,"target_column":null,"EXTRA":"auto_increment","column_key":"PRI","isPrimaryKey":true},"codeType":"int"},"budget_type":{"type":"INT(11)","allowNull":false,"defaultValue":null,"primaryKey":false,"autoIncrement":false,"comment":"预算类型(0.采购1.差旅2.其他)","codeType":"int"},"money":{"type":"DECIMAL(10,2)","allowNull":true,"defaultValue":null,"primaryKey":false,"autoIncrement":false,"comment":"申请总金额","codeType":"decimal?"},"apply_idx":{"type":"INT(11)","allowNull":false,"defaultValue":null,"primaryKey":false,"autoIncrement":false,"comment":"申请人idx","codeType":"int"},"apply_remark":{"type":"VARCHAR(225)","allowNull":true,"defaultValue":null,"primaryKey":false,"autoIncrement":false,"comment":"申请事由","codeType":"string"},"use_money":{"type":"DECIMAL(10,0)","allowNull":true,"defaultValue":"'0'","primaryKey":false,"autoIncrement":false,"comment":"已使用金额","codeType":"decimal?"},"balance":{"type":"DECIMAL(10,0)","allowNull":true,"defaultValue":"'`money`'","primaryKey":false,"autoIncrement":false,"comment":"余额","codeType":"decimal?"},"budget_state":{"type":"INT(11)","allowNull":false,"defaultValue":"'0'","primaryKey":false,"autoIncrement":false,"comment":"预算状态（-1已取消0待审批1.使用中2.使用完3.审核驳回）","codeType":"int"},"remark":{"type":"VARCHAR(255)","allowNull":true,"defaultValue":null,"primaryKey":false,"autoIncrement":false,"comment":"申请备注","codeType":"string"},"finance_remarks":{"type":"VARCHAR(255)","allowNull":true,"defaultValue":null,"primaryKey":false,"autoIncrement":false,"comment":"财务备注","codeType":"string"}},"foreignKeys":{"tb_bill_budget_info":{"idx":{"source_table":"kuaigolf_staging","source_schema":"kuaigolf_staging","target_schema":null,"constraint_name":"PRIMARY","source_column":"idx","target_table":null,"target_column":null,"EXTRA":"auto_increment","column_key":"PRI","isPrimaryKey":true}},"tb_bill_loan_info":{"idx":{"source_table":"kuaigolf_staging","source_schema":"kuaigolf_staging","target_schema":null,"constraint_name":"PRIMARY","source_column":"idx","target_table":null,"target_column":null,"EXTRA":"auto_increment","column_key":"PRI","isPrimaryKey":true}}},"tableName":"tb_bill_budget_info","tableComment":"预算申请","className":"BillBudget"}
+
+

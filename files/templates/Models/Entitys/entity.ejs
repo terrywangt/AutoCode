@@ -1,0 +1,24 @@
+{{%
+     output="<%-tableName %>.cs";//模板文件输出文件名称
+%}}
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Web;
+using System.ComponentModel;
+namespace ManageApi.Models.Entitys
+{
+	/// <summary>
+    /// <%=tableComment %>
+    /// </summary>
+	public class <%= tableName %> : BaseEntity
+	{<%Object.keys(columns).forEach(key=>{%>
+        /// <summary>
+        /// <%=columns[key]['comment']%>
+        /// </summary>
+        [DisplayName("<%=columns[key]['comment']%>")]<%-columns[key]['primaryKey']?'[Key]':''%>
+        public <%=columns[key]['codeType']%> <%=key%> { get; set; }
+     <%})%>		
+	}
+}

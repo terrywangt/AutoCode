@@ -1,0 +1,13 @@
+
+BillLoan
+billLoan
+bill_loan
+bill-loan
+
+
+tb_bill_loan_info
+TbBillLoanInfo
+tbBillLoanInfo
+{"columns":{"idx":{"type":"INT(12)","allowNull":false,"defaultValue":null,"primaryKey":true,"autoIncrement":true,"comment":"主键","foreignKey":{"source_table":"kuaigolf_staging","source_schema":"kuaigolf_staging","target_schema":null,"constraint_name":"PRIMARY","source_column":"idx","target_table":null,"target_column":null,"EXTRA":"auto_increment","column_key":"PRI","isPrimaryKey":true},"codeType":"int"},"money":{"type":"DECIMAL(10,2)","allowNull":true,"defaultValue":null,"primaryKey":false,"autoIncrement":false,"comment":"申请金额","codeType":"decimal?"},"apply_idx":{"type":"INT(11)","allowNull":false,"defaultValue":null,"primaryKey":false,"autoIncrement":false,"comment":"申请人idx","codeType":"int"},"apply_remark":{"type":"VARCHAR(225)","allowNull":true,"defaultValue":null,"primaryKey":false,"autoIncrement":false,"comment":"申请理由","codeType":"string"},"loan_type":{"type":"INT(11)","allowNull":true,"defaultValue":"'0'","primaryKey":false,"autoIncrement":false,"comment":"借款类型(0差旅费，1招待费，2办公费，3交通费，4通讯费，5其他)","codeType":"int?"},"payment_idx":{"type":"INT(11)","allowNull":true,"defaultValue":null,"primaryKey":false,"autoIncrement":false,"comment":"付款方","codeType":"int?"},"collection_idx":{"type":"INT(11)","allowNull":true,"defaultValue":null,"primaryKey":false,"autoIncrement":false,"comment":"收款方","codeType":"int?"},"payment_type":{"type":"INT(11)","allowNull":true,"defaultValue":null,"primaryKey":false,"autoIncrement":false,"comment":" 付款方式(0银行卡，1现金，2汇票，3电汇，4贷记，5支票，6其他)","codeType":"int?"},"loan_state":{"type":"INT(11)","allowNull":false,"defaultValue":"'0'","primaryKey":false,"autoIncrement":false,"comment":"借款单状态（-1已取消0待审核1待付款2已付款3.审批驳回）","codeType":"int"},"bill_budget_idx":{"type":"INT(11)","allowNull":false,"defaultValue":null,"primaryKey":false,"autoIncrement":false,"comment":"关联预算单idx","codeType":"int"},"bill_payment_idx":{"type":"INT(11)","allowNull":true,"defaultValue":null,"primaryKey":false,"autoIncrement":false,"comment":"生成应付款的idx（关联应付款单据）","codeType":"int?"}},"foreignKeys":{"tb_bill_budget_info":{"idx":{"source_table":"kuaigolf_staging","source_schema":"kuaigolf_staging","target_schema":null,"constraint_name":"PRIMARY","source_column":"idx","target_table":null,"target_column":null,"EXTRA":"auto_increment","column_key":"PRI","isPrimaryKey":true}},"tb_bill_loan_info":{"idx":{"source_table":"kuaigolf_staging","source_schema":"kuaigolf_staging","target_schema":null,"constraint_name":"PRIMARY","source_column":"idx","target_table":null,"target_column":null,"EXTRA":"auto_increment","column_key":"PRI","isPrimaryKey":true}}},"tableName":"tb_bill_loan_info","tableComment":"借款申请","className":"BillLoan"}
+
+
